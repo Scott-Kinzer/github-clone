@@ -10,16 +10,28 @@ export default function Form(props: IFormProps) {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [passwordRepeat, setPasswordRepeat] = useState("");
+
 
   return (
     <div>
+
+        {props.login &&
+        <>
+            <h2>Form</h2>
+            <input type="text" value={email} onChange={(e) => setEmail(e.currentTarget.value)} />
+            <input type="text" value={password} onChange={(e) => setPassword(e.currentTarget.value)} />
+            <button onClick={() => props.handleF(email, password)}>LOGIN</button>
+        </>}
 
         {!props.login &&
         <>
             <h2>Form</h2>
             <input type="text" value={email} onChange={(e) => setEmail(e.currentTarget.value)} />
             <input type="text" value={password} onChange={(e) => setPassword(e.currentTarget.value)} />
-            <button onClick={() => props.handleF(email, password)}>REGISTER</button>
+            <input type="text" value={passwordRepeat} onChange={(e) => setPasswordRepeat(e.currentTarget.value)} />
+
+            <button disabled={password !== passwordRepeat } onClick={() => props.handleF(email, password)}>REGISTER</button>
         </>}
         
     </div>

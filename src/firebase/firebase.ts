@@ -1,7 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import {TOKENS} from '../tokens/tokens';
-import { getAuth} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: TOKENS.REACT_APP_FIREBASE_API_KEY,

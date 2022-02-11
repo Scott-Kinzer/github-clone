@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import AuthorizhedPage from './components/AuthorizhedPage/AuthorizhedPage'
 import HomePage from './components/HomePage/HomePage'
 import Layout from './components/Layout/Layout'
 import LoginPage from './components/LoginPage/LoginPage'
@@ -17,7 +18,8 @@ function App() {
             <Route index element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-     
+            <Route path="/main" element={<AuthorizhedPage />} />
+
       </Route>
     </Routes>
     </div>
