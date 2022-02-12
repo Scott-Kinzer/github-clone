@@ -7,6 +7,7 @@ import LoginPage from './components/LoginPage/LoginPage'
 import RegisterPage from './components/RegisterPage/RegisterPage'
 
 import './App.css';
+import GuestPage from './components/GuestPage/GuestPage'
 
 function App() {
 
@@ -21,6 +22,8 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/main" element={<AuthorizhedPage />} />
+            <Route path="/user/:name/details" element={<GuestPage />} />
+
 
       </Route>
     </Routes>

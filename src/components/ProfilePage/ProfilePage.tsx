@@ -16,20 +16,28 @@ export default function ProfilePage({user}) {
 
   return (
 
-    <div className={s.profileWrapper}>
+    <ProfileSubWrapper user={user} repos={repos} />
+  )
+}
+
+export function ProfileSubWrapper ({user, repos}) {
+    console.log(user);
+    return (
+
+        <div className={s.profileWrapper}>
 
         <div className={s.leftSideDescription}>
             <img src={user.avatar_url} alt="" />
             <div>{user.name}</div>
             <div>{user.login}</div>
 
-            <div>
+            {/* <div>
                 <div className={s.folowingWrapper}>
                     <div>folowers</div>
                     <div>folowing</div>
                 </div>
                 
-            </div>
+            </div> */}
 
             <div>{user.location}</div>
             <div>{user.blog}</div>
@@ -39,7 +47,7 @@ export default function ProfilePage({user}) {
         
 
         <div className={s.rightSide}>
-        <h2>Repos</h2>
+            <h2>Repos</h2>
             <div className={s.mainSideDescription}>
             {repos.map((repo) => {
                     return <RepoItem repo={repo} />
@@ -48,5 +56,6 @@ export default function ProfilePage({user}) {
                 
         </div>
     </div>
-  )
+
+    )
 }

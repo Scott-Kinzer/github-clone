@@ -14,6 +14,18 @@
     justify-content: space-between;
 }
 
+@media (max-width: 768px) {
+    .wrapperInput {
+        flex-direction: column;
+    }
+
+    .header {
+        flex-direction: column;
+        height: 80px;
+    }
+}
+
+
 .usersSearch {
     overflow-y: scroll;
     height: 300px;
@@ -23,7 +35,25 @@
     top: 37px;
 }
 
+@media (max-width: 450px) {
+    .usersSearch {
+        right: 0px;
+    }
+}
+
+
 .wrapperInput {
     position: relative;
     display: flex;
+    margin-left: 10px;
+}
+
+.image {
+    width: 50px;
+    height: 50px;
+}
+
+.itemWrap {
+    display: flex;
+    justify-content: space-around;
 }

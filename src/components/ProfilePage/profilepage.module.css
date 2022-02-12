@@ -5,9 +5,22 @@
     /* align-items: center; */
 }
 
+@media (max-width: 768px) {
+    .profileWrapper {
+        flex-direction: column;
+    }
+}
+
 .leftSideDescription {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    color: white;
+    align-items: center;
+}
+
+.leftSideDescription div {
+    margin-top: 12px;
 }
 
 .folowingWrapper {

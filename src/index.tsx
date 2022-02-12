@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import './firebase/firebase';
 import {
-  BrowserRouter,
+  BrowserRouter,HashRouter
 
 } from "react-router-dom";
 import { Provider } from 'react-redux'
@@ -13,11 +13,11 @@ import store from './store/store';
 
 ReactDOM.render(
   <React.StrictMode>
-      <BrowserRouter>
+      <HashRouter>
       <Provider store={store}>
           <App />
       </Provider>
-      </BrowserRouter>
+      </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
