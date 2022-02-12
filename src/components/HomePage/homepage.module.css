@@ -1,0 +1,52 @@
+.homeWrapper {
+    width: 40%;
+    height: 300px;
+    background-color: #0c162d;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    color: white;
+    border-radius: 8px;
+
+}
+
+.buttonWrapper {
+    color: #627597;
+    background: none;
+    border-color: #627597;
+}
+
+.globalHomeWrapper {
+    height: calc(100vh - 69px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnForm {
+    padding: 8px 20px;
+    font-size: 12px;
+    line-height: 20px;
+    background-color: #238636;
+    border: 1px solid black;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+.btnForm:hover {
+    background: white;
+    color: black;
+    transition: 0.8s;
+}
+
+.btnsWrapper {
+    width: 80%;
+    box-sizing: border-box;
+    padding: 5px;
+    justify-content: space-around;
+    display: flex;
+    margin: 0 auto;
+
+}

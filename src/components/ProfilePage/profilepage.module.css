@@ -1,0 +1,34 @@
+.profileWrapper {
+    display: flex;
+    width: 70%;
+    margin: 20px auto;
+    /* align-items: center; */
+}
+
+.leftSideDescription {
+    display: flex;
+    flex-direction: column;
+}
+
+.folowingWrapper {
+    display: flex;
+}
+
+.leftSideDescription img {
+    width: 300px;
+    height: auto;
+    border-radius: 100%;
+}
+
+.mainSideDescription {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    justify-content: center;
+    height: 300px;
+}
+
+.rightSide {
+    display: flex;
+    flex-direction: column;
+}

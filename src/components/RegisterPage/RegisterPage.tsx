@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useAppDispatch } from '../../store/store';
 import Form from '../Form/Form';
-import { setUser } from '../../store/features/user/UserSlice';
+import { fetchAuthUser, setUser } from '../../store/features/user/UserSlice';
 import { useNavigate } from 'react-router-dom';
+import HocWelcome from '../HocWelcome/HocWelcome';
 
 
 
@@ -12,10 +13,10 @@ function RegisterPage() {
     const dispatch = useAppDispatch();
     
     const navigate = useNavigate();
-    
+    const [error, setError] = useState(null);
 
-  const registerLogin = (email:string, password: string) => {
 
+  const registerLogin = (name: string ,email:string, password: string) => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email , password)
     .then((userCredential) => {
@@ -23,24 +24,30 @@ function RegisterPage() {
       user.getIdToken()
                 .then(token => dispatch(setUser({email: user.email , uid: user.uid, accessToken: token,}))).
                 then(() => {
-                    navigate('/main');
+                    dispatch(fetchAuthUser(name.toLowerCase()));
+
+                }).then(() => {
+                  navigate('/main');
+                }).catch((e) => {
+                  setError(e.message)
                 })
 
     })
     .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
+      setError(error.message);
+
     });
   }
 
   return (
     <div>
-
-        <div>
+      {
+        error && <div>{error}</div>
+      }
             <Form handleF={registerLogin} />
-        </div>
+
     </div>
   )
 }
 
-export default RegisterPage
+export default HocWelcome(RegisterPage);

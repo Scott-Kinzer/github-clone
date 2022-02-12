@@ -1,0 +1,29 @@
+.header {
+    width: 100%;
+    /* z-index: 32; */
+    display: flex;
+    padding: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    color: white;
+    background-color: #161b22;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 50px;
+    justify-content: space-between;
+}
+
+.usersSearch {
+    overflow-y: scroll;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    background: wheat;
+    top: 37px;
+}
+
+.wrapperInput {
+    position: relative;
+    display: flex;
+}

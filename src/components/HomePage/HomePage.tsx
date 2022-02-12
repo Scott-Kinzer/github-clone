@@ -1,14 +1,19 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import HocWelcome from '../HocWelcome/HocWelcome';
 
-export default function HomePage() {
+import s from './homepage.module.css';
+
+ function HomePage() {
   return (
-    <div>
-        <h2>Hello nice to meet you</h2>
-
-        <NavLink to="login"><button>LOGIN</button></NavLink>
-        <NavLink to="register"><button>REGISTER</button></NavLink>
-
-    </div>
+    <>
+              <div className={s.btnsWrapper}>
+                <NavLink to="login"><button className={s.btnForm}>LOGIN</button></NavLink>
+                <NavLink to="register"><button className={s.btnForm}>REGISTER</button></NavLink>
+              </div>
+    </>
+    
   )
 }
+
+export default HocWelcome(HomePage);

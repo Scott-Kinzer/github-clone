@@ -6,6 +6,8 @@ import Layout from './components/Layout/Layout'
 import LoginPage from './components/LoginPage/LoginPage'
 import RegisterPage from './components/RegisterPage/RegisterPage'
 
+import './App.css';
+
 function App() {
 
 
